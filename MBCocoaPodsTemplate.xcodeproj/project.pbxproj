@@ -15,6 +15,7 @@
 		DD3D14CE18245CC200B5C329 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3D14CD18245CC200B5C329 /* main.m */; };
 		DD3D14D218245CC200B5C329 /* MBCPTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3D14D118245CC200B5C329 /* MBCPTAppDelegate.m */; };
 		DD3D14D818245CC200B5C329 /* MBCPTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD3D14D718245CC200B5C329 /* MBCPTViewController.m */; };
+		DDF9597D1846C55A00A34D1E /* flight.json in Resources */ = {isa = PBXBuildFile; fileRef = DDF9597C1846C55A00A34D1E /* flight.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		DD3D14D118245CC200B5C329 /* MBCPTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBCPTAppDelegate.m; sourceTree = "<group>"; };
 		DD3D14D618245CC200B5C329 /* MBCPTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBCPTViewController.h; sourceTree = "<group>"; };
 		DD3D14D718245CC200B5C329 /* MBCPTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBCPTViewController.m; sourceTree = "<group>"; };
+		DDF9597C1846C55A00A34D1E /* flight.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flight.json; sourceTree = SOURCE_ROOT; };
 		EACD063F634741B4A15E60C7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				DD3D14D118245CC200B5C329 /* MBCPTAppDelegate.m */,
 				DD3D14D618245CC200B5C329 /* MBCPTViewController.h */,
 				DD3D14D718245CC200B5C329 /* MBCPTViewController.m */,
+				DDF9597C1846C55A00A34D1E /* flight.json */,
 				DD3D14C818245CC200B5C329 /* Supporting Files */,
 			);
 			path = MBCocoaPodsTemplate;
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD3D14CC18245CC200B5C329 /* InfoPlist.strings in Resources */,
+				DDF9597D1846C55A00A34D1E /* flight.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
