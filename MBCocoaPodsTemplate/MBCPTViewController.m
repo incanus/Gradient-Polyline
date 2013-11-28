@@ -53,7 +53,7 @@
     CLLocationCoordinate2D sw = CLLocationCoordinate2DMake([bboxCoordinates[3] doubleValue], [bboxCoordinates[2] doubleValue]);
 
     [self.mapView zoomWithLatitudeLongitudeBoundsSouthWest:sw northEast:ne animated:NO];
-    self.mapView.zoom -= 1;
+    self.mapView.zoom -= 0.5;
 }
 
 #pragma mark -
