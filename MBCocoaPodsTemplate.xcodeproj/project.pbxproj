@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		BC61AAB00A074FA188410EC3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		DD3D14BE18245CC200B5C329 /* MBCocoaPodsTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBCocoaPodsTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD3D14BE18245CC200B5C329 /* Gradient Polyline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gradient Polyline.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3D14C118245CC200B5C329 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DD3D14C318245CC200B5C329 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DD3D14C518245CC200B5C329 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -64,7 +64,7 @@
 		DD3D14BF18245CC200B5C329 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD3D14BE18245CC200B5C329 /* MBCocoaPodsTemplate.app */,
+				DD3D14BE18245CC200B5C329 /* Gradient Polyline.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,7 +123,7 @@
 			);
 			name = MBCocoaPodsTemplate;
 			productName = MBCocoaPodsTemplate;
-			productReference = DD3D14BE18245CC200B5C329 /* MBCocoaPodsTemplate.app */;
+			productReference = DD3D14BE18245CC200B5C329 /* Gradient Polyline.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -305,7 +305,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MBCocoaPodsTemplate/MBCocoaPodsTemplate-Prefix.pch";
 				INFOPLIST_FILE = "MBCocoaPodsTemplate/MBCocoaPodsTemplate-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Gradient Polyline";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -319,7 +319,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MBCocoaPodsTemplate/MBCocoaPodsTemplate-Prefix.pch";
 				INFOPLIST_FILE = "MBCocoaPodsTemplate/MBCocoaPodsTemplate-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Gradient Polyline";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
