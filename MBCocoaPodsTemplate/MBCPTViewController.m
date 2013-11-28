@@ -40,12 +40,16 @@
         CLLocationDegrees lon = [coordinatePair[0] doubleValue];
 
         [points addObject:[[CLLocation alloc] initWithLatitude:lat longitude:lon]];
-    }
 
-    RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:self.mapView coordinate:[points[0] coordinate] andTitle:nil];
-    [annotation setBoundingBoxFromLocations:points];
-    annotation.userInfo = points;
-    [self.mapView addAnnotation:annotation];
+        if ([points count] == 30)
+        {
+            RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:self.mapView coordinate:[points[0] coordinate] andTitle:nil];
+            [annotation setBoundingBoxFromLocations:points];
+            annotation.userInfo = points;
+            [self.mapView addAnnotation:annotation];
+            points = [NSMutableArray arrayWithObject:[points lastObject]];
+        }
+    }
 
     NSArray *bboxCoordinates = flight[@"features"][0][@"geometry"][@"bbox"];
 
@@ -63,12 +67,17 @@
     if (annotation.isUserLocationAnnotation)
         return nil;
 
+    NSArray *points = annotation.userInfo;
+
     RMShape *shape = [[RMShape alloc] initWithView:mapView];
 
-    shape.lineColor = [UIColor purpleColor];
+    NSArray *colors = @[ @"red", @"yellow", @"green", @"blue", @"cyan", @"magenta", @"white", @"lightGray", @"brown" ];
+
+    shape.lineColor = [[UIColor class] performSelector:NSSelectorFromString([NSString stringWithFormat:@"%@Color", [colors objectAtIndex:(rand() % [colors count])]])];
+    shape.lineJoin = kCALineJoinRound;
     shape.lineWidth = 3.0;
 
-    for (CLLocation *point in (NSArray *)annotation.userInfo)
+    for (CLLocation *point in points)
         [shape addLineToCoordinate:point.coordinate];
 
     return shape;
