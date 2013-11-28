@@ -10,7 +10,7 @@
 
 #import <MapBox/MapBox.h>
 
-@interface MBCPTViewController ()
+@interface MBCPTViewController () <RMMapViewDelegate>
 
 @property (nonatomic) RMMapView *mapView;
 
@@ -26,6 +26,8 @@
 
     [self.view addSubview:self.mapView];
 
+    self.mapView.delegate = self;
+
     NSDictionary *flight = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"flight" ofType:@"json"]]
                                                            options:0
                                                              error:nil];
@@ -40,7 +42,10 @@
         [points addObject:[[CLLocation alloc] initWithLatitude:lat longitude:lon]];
     }
 
-    [self.mapView addAnnotation:[[RMPolylineAnnotation alloc] initWithMapView:self.mapView points:points]];
+    RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:self.mapView coordinate:[points[0] coordinate] andTitle:nil];
+    [annotation setBoundingBoxFromLocations:points];
+    annotation.userInfo = points;
+    [self.mapView addAnnotation:annotation];
 
     NSArray *bboxCoordinates = flight[@"features"][0][@"geometry"][@"bbox"];
 
@@ -49,6 +54,24 @@
 
     [self.mapView zoomWithLatitudeLongitudeBoundsSouthWest:sw northEast:ne animated:NO];
     self.mapView.zoom -= 1;
+}
+
+#pragma mark -
+
+- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
+{
+    if (annotation.isUserLocationAnnotation)
+        return nil;
+
+    RMShape *shape = [[RMShape alloc] initWithView:mapView];
+
+    shape.lineColor = [UIColor purpleColor];
+    shape.lineWidth = 3.0;
+
+    for (CLLocation *point in (NSArray *)annotation.userInfo)
+        [shape addLineToCoordinate:point.coordinate];
+
+    return shape;
 }
 
 @end
